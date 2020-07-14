@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    tty: true
+    stdin_open: true
+    container_name: odetofood
+    build:
+      context: .
+    # depends_on:
+    #   - mongo
+    volumes:
+      - .:/app/out:rw
+    ports:
+      - 8080:80
+    entrypoint: 'bash -c "dotnet outOdeToFood.dll"'
+#   mongo:
+#     image: mongo:3.6.0

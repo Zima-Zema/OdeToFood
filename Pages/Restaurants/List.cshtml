@@ -1,0 +1,39 @@
+﻿@page
+@model MyApp.Namespace.ListModel
+@{
+}
+
+
+<div class="container section-block">
+    <form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm">
+            <span class="input-group-btn">
+                <button class="btn btn-default">
+                    <i class="fas fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+</div>
+
+<div class="container section-block">
+    <div class="card">
+    <div class="card-body">
+            <div class="form-group">
+        <div class="input-group">
+            <a asp-page="./Edit" class="btn btn-primary form-control">Add New</a>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+<div class="container section-block">
+    @foreach (var restaurant in @Model.Restaurants)
+{
+    <partial name="_Summary" model="restaurant" ></partial>
+}
+</div>
