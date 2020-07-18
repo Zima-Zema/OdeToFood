@@ -12,7 +12,7 @@ namespace OdeToFood.Data
         Restaurant UpdateRestaurant(Restaurant restaurant);
         Restaurant AddRestaurant(Restaurant restaurant);
         Restaurant DeleteRestaurant(int id);
-
+        int CountRestaurant();
         int Commit();
     }
 }

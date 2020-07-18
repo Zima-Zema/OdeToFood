@@ -13,6 +13,7 @@ namespace OdeToFood.Data
         {
             this.dbContext = dbContext;
         }
+
         public Restaurant AddRestaurant(Restaurant restaurant)
         {
             dbContext.Restaurants.Add(restaurant);
@@ -59,6 +60,11 @@ namespace OdeToFood.Data
             var entity = dbContext.Restaurants.Attach(restaurant);
             entity.State = EntityState.Modified;
             return restaurant;
+        }
+
+        public int CountRestaurant()
+        {
+            return dbContext.Restaurants.Count();
         }
     }
 }
